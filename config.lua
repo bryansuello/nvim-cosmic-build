@@ -29,6 +29,7 @@ local config = {
     servers = {
       -- Enable rust_analyzer
       rust_analyzer = true,
+            html = true,
 
       -- Enable tsserver w/custom settings
       tsserver = {
@@ -66,7 +67,7 @@ local config = {
   telescope = {},
   -- Theming, don't forget to run :CosmicReloadSync when changing themes
   -- Options: 'catppuccin', 'dracula', 'enfocado', 'github', 'gruvbox', 'kanagawa', 'nightfox', 'nord', 'onedark', 'rose-pine',
-  theme = 'tokyonight', -- don't define or set to nil, if you want to enable your own theme in cosmic/config/plugins.lua
+  theme = 'gruvbox', -- don't define or set to nil, if you want to enable your own theme in cosmic/config/plugins.lua
   -- See https://github.com/folke/todo-comments.nvim#%EF%B8%8F-configuration
   todo_comments = {},
   -- See :h nvim-treesitter-quickstart
@@ -87,7 +88,8 @@ local config = {
   },
   -- Disable plugins enabled by CosmicNvim
   disable_builtin_plugins = {
-    'terminal'
+    'terminal',
+    'dashboard',
     --[[
     'auto-session',
     'nvim-cmp',

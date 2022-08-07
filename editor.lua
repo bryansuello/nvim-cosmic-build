@@ -5,7 +5,7 @@ local map = require('cosmic.utils').map
 local opt = vim.opt
 
 -- Default leader is <space>
-g.mapleader = ','
+g.mapleader = ' '
 
 -- Default indent = 2
 opt.shiftwidth = 4
@@ -30,7 +30,17 @@ opt.wrap = true       -- Line wrap
 -- or `:map`, `:map <leader>`
 
 -- Example: Additional insert mapping:
-map('i', 'kj', '<esc>')
+map('i', 'kj', '<esc>', { noremap = true })
+
+--- NvimTree
+map('n', '<leader>e', ':NvimTreeToggle<CR>')
+map('n', '<leader>f', ':NvimTreeFocus<CR>')
+-- leader r to refresh tree
+map('n', '<leader>]', ':bnext<CR>') -- buffer
+map('n', '<leader>[', ':bprev<CR>') -- buffer
+-- leader bd to close buffer
+map('n', '<leader>0', ':highlight Normal guibg=none<CR>') -- remove background
+map('n', '<leader>p', ':Telescope find_files<CR>') -- telescope
 
 -- Mapping options:
 -- map('n', ...)
